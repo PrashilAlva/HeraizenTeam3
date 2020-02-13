@@ -39,12 +39,30 @@
     margin-left: auto;
     margin-right: auto;
     width: 10%;
-    padding-top:150px;
-    padding-left:150px;
+    padding-top:180px;
+    padding-left:250px;
   }
 
   .btn-danger-outline{
     color:#76323f;
     border:2px solid #76323f;
     background:white;
+  }
+
+  .btn-danger-outline:hover{
+    color:white;
+    border:2px solid #76323f;
+    background: #76323f;
+  }
+
+  .btn-danger-outline:active{
+    color:white;
+    border:2px solid #76323f;
+    background: #76323f;
+  }
+
+  .btn-danger-outline:focus{
+    color:white;
+    border:2px solid #76323f;
+    background: #76323f;
   }
