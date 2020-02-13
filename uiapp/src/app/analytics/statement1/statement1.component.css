@@ -66,3 +66,8 @@
     border:2px solid #76323f;
     background: #76323f;
   }
+
+  .search1{
+    border-radius: 2em;
+    width:200px;
+  }

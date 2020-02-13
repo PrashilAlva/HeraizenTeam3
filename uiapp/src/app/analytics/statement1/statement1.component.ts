@@ -25,6 +25,7 @@ export class Statement1Component implements OnInit {
   user_info;
   selectedDept;
   studentsPerf ;
+  searchStr;
   dispPopUp = false;
 
   showSpinner = false;
@@ -42,6 +43,7 @@ export class Statement1Component implements OnInit {
   subject;
   facultyAvg  = [];
   placeDummy;
+  allFaculties;
   constructor(private analyticsService: AnalyticsService, private authService: AuthService) { }
 
   ngOnInit() {
@@ -119,6 +121,21 @@ initSubjects(ele){
 })
 }
 
+updateFacultyList(){
+  // console.log(this.searchStr)
+  let fa = this.allFaculties
+    let newfa = []
+    var regex = new RegExp(`^${this.searchStr}.*`, "i"); 
+    for(let f of fa){
+      let rex = regex.test(f['name'])
+      // console.log(rex)
+      if(rex){
+        newfa.push(f)
+      }
+    }
+    // console.log(newfa)
+    this.faculties = newfa;
+}
 graph_dataFaculty(data){
     this.showSpinner = false
     this.chart_visibility = true
@@ -218,7 +235,8 @@ graph_dataFaculty(data){
     let dept=this.user_info['employeeGivenId'][0]+this.user_info['employeeGivenId'][1]+this.user_info['employeeGivenId'][2]
     this.analyticsService.get_faculties(this.selectedyear, this.terms, dept).subscribe(res => {
       this.faculties = res['faculties']
-      this.faculties.sort(this.GetSortOrder("name")) 
+      this.faculties.sort(this.GetSortOrder("name"))
+      this.allFaculties=this.faculties 
     });
   }
 
@@ -226,7 +244,8 @@ graph_dataFaculty(data){
     this.displayFaculty=true;
     this.analyticsService.get_faculties(this.selectedyear, this.terms, this.selectedDept).subscribe(res => {
       this.faculties = res['faculties']
-      this.faculties.sort(this.GetSortOrder("name")) 
+      this.faculties.sort(this.GetSortOrder("name"))
+      this.allFaculties=this.faculties  
     })
 
   }
