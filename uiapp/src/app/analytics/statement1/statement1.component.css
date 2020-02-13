@@ -1,0 +1,50 @@
+.search-btn {
+    background-color: #00303f !important;
+    color: white;
+    border: none;
+    margin-top:6px;
+    /* margin-left: 0px; */
+  }
+
+  .labels{
+    top: -6px;
+    font-size: 0.75em;
+    color: #009688;
+    font-weight: bold;
+  }
+
+  .example-card{
+    width:300px;
+    border-top:#76323f 5px solid;
+    border-left:#76323f 5px solid;
+  }
+ 
+  .center{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  }
+
+  .center-faculty{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  padding-top:150px;
+  }
+
+  .center-div{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    padding-top:150px;
+    padding-left:150px;
+  }
+
+  .btn-danger-outline{
+    color:#76323f;
+    border:2px solid #76323f;
+    background:white;
+  }
